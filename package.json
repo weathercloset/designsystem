@@ -9,7 +9,8 @@
     "build": "yarn build:storybook",
     "build:storybook": "yarn build-storybook",
     "start": "yarn storybook",
-    "storybook": "start-storybook -p 9009 -s public"
+    "storybook": "start-storybook -p 9009 -s public",
+    "publish": "npm publish --access=public"
   },
   "peerDependencies": {
     "react": "^17.0.2",
