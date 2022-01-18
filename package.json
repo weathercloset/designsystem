@@ -1,6 +1,6 @@
 {
   "name": "@weathercloset/ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "https://github.com/weathercloset/designsystem.git",
   "author": "Jonghyeon Ko <flowithusdev@gmail.com>",
