@@ -17,6 +17,7 @@
     "build": "yarn clean && rollup -c",
     "build:storybook": "build-storybook -o out",
     "clean": "rimraf dist .out",
+    "prepublish": "yarn build",
     "start": "yarn storybook",
     "storybook": "yarn build && start-storybook -p 9009 -s public",
     "publish": "npm publish --access=public"
