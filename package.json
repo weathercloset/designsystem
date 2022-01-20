@@ -1,6 +1,6 @@
 {
   "name": "@weathercloset/ui",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
