@@ -1,7 +1,5 @@
 stories/
-src/
 .storybook
 .vscode
-components
 typings
 .github/
