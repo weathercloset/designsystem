@@ -4,13 +4,17 @@ import commonjs from '@rollup/plugin-commonjs'
 import typescript from 'rollup-plugin-typescript2'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
+import strip from '@rollup/plugin-strip'
+import sass from 'rollup-plugin-sass'
+import url from 'rollup-plugin-url'
+import svgr from '@svgr/rollup'
 
 export default {
   input: './index.ts',
   output: [
     {
-      dir: 'build',
-      format: 'esm',
+      dir: 'dist',
+      format: 'cjs',
       exports: 'named',
       sourcemap: true,
     },
@@ -29,5 +33,11 @@ export default {
       modules: true,
       use: ['sass'],
     }),
+    sass({
+      output: true,
+    }),
+    strip(),
+    url(),
+    svgr(),
   ],
 }
