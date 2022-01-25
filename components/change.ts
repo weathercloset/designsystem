@@ -1,3 +1,0 @@
-interface change {
-  hi: 'change'
-}
