@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium' | 'large'
-  children: ReactChildren
+  children?: ReactChildren
   onClick?: () => void
   [prop: string]: any
 }
