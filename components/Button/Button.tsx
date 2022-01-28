@@ -1,9 +1,9 @@
-import React, { HTMLAttributes, ReactChildren } from 'react'
+import React, { HTMLAttributes, ReactNode } from 'react'
 import styled from '@emotion/styled'
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium' | 'large'
-  children?: ReactChildren
+  children?: ReactNode
   onClick?: () => void
   [prop: string]: any
 }
