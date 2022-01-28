@@ -10,7 +10,7 @@
     "weathercloset",
     "designsystem"
   ],
-  "repository": "https://github.com/weathercloset/designsystem.git",
+  "repository": "https://github.com/weathercloset/ui.git",
   "author": "Jonghyeon Ko <flowithusdev@gmail.com>",
   "license": "MIT",
   "scripts": {
