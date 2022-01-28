@@ -1,27 +1,11 @@
-import React from 'react'
-import './button.css'
+import React, { HTMLAttributes, ReactChildren } from 'react'
+import styled from '@emotion/styled'
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string
-  /**
-   * How large should the button be?
-   */
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium' | 'large'
-  /**
-   * Button contents
-   */
-  label: string
-  /**
-   * Optional click handler
-   */
+  children: ReactChildren
   onClick?: () => void
+  [prop: string]: any
 }
 
 /**
@@ -32,23 +16,16 @@ const Button = ({
   size = 'medium',
   backgroundColor,
   label,
+  children,
   ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  )
-}
+}: ButtonProps) => <StyledButton {...props}>{children}</StyledButton>
 
 export default Button
+
+const StyledButton = styled.button<ButtonProps>`
+  background-color: black;
+  padding: 16px 12px;
+  color: white;
+  border-radius: 16px;
+  border: 0;
+`
