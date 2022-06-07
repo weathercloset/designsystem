@@ -1,31 +1,37 @@
-import React, { HTMLAttributes, ReactNode } from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 import styled from '@emotion/styled'
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   size?: 'small' | 'medium' | 'large'
   children?: ReactNode
-  onClick?: () => void
-  [prop: string]: any
+  onClick: MouseEventHandler<HTMLButtonElement> & (() => void)
+  backgroundColor?: 'black' | 'red' | 'blue'
 }
 
 /**
  * Primary UI component for user interaction
  */
 const Button = ({
-  primary = false,
   size = 'medium',
-  backgroundColor,
-  label,
+  backgroundColor = 'black',
+  onClick,
   children,
-  ...props
-}: ButtonProps) => <button {...props}>{children}</button>
+}: ButtonProps) => (
+  <StyledButton size={size} backgroundColor={backgroundColor} onClick={onClick}>
+    {children}
+  </StyledButton>
+)
 
 export default Button
 
-// const StyledButton = styled.button<ButtonProps>`
-//   background-color: black;
-//   padding: 16px 12px;
-//   color: white;
-//   border-radius: 16px;
-//   border: 0;
-// `
+const StyledButton = styled.button<ButtonProps>`
+  background-color: ${(props) => props.backgroundColor};
+  padding: 16px 12px;
+  color: white;
+  border-radius: 16px;
+  border: 0;
+`
