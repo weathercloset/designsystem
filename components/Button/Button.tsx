@@ -18,14 +18,14 @@ const Button = ({
   label,
   children,
   ...props
-}: ButtonProps) => <StyledButton {...props}>{children}</StyledButton>
+}: ButtonProps) => <button {...props}>{children}</button>
 
 export default Button
 
-const StyledButton = styled.button<ButtonProps>`
-  background-color: black;
-  padding: 16px 12px;
-  color: white;
-  border-radius: 16px;
-  border: 0;
-`
+// const StyledButton = styled.button<ButtonProps>`
+//   background-color: black;
+//   padding: 16px 12px;
+//   color: white;
+//   border-radius: 16px;
+//   border: 0;
+// `
