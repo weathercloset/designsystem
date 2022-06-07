@@ -9,6 +9,8 @@ import sass from 'rollup-plugin-sass'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
 
+const extensions = ['.js', '.jsx', '.ts', '.tsx']
+
 export default {
   input: './index.ts',
   output: [
@@ -23,9 +25,9 @@ export default {
   plugins: [
     peerDepsExternal(),
     image(),
-    resolve(),
+    resolve({extensions}),
     commonjs({
-      include: /node_modules/,
+      include: '/node_modules/**',
     }),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss({
